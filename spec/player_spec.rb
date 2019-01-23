@@ -14,13 +14,6 @@ describe Player do
    end
  end
 
- describe "#attack" do
-   it "tells the player to receive damage" do
-     expect(player2).to receive :receive_damage
-     ross.attack(player2)
-   end
- end
-
  describe "#receive_damage" do
    it "deducts #{Player::DEFAULT_ATTACK} HP" do
      ross.receive_damage
