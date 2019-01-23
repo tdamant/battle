@@ -1,4 +1,4 @@
-require 'game'
+
 
 describe Game do
 let(:player1) { double(:player1) }
