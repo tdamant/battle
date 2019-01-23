@@ -45,8 +45,8 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
 # The settings below are suggested to provide a good initial experience
-# with RSpec, but feel free to customize to your heart's content.
-=begin
+  # with RSpec, but feel free to customize to your heart's content.
+  =begin
   # This allows you to limit a spec run to individual examples or groups
   # you care about by tagging them with `:focus` metadata. When nothing
   # is tagged with `:focus`, all examples get run. RSpec also provides
@@ -97,14 +97,15 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
-ENV['RACK_ENV'] = 'test'
-# require our Sinatra app file
-require File.join(File.dirname(__FILE__), "..", 'app.rb')
+  ENV['RACK_ENV'] = 'test'
+  # require our Sinatra app file
+  require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
-require 'capybara'
-require 'capybara/rspec'
-require 'rspec'
+  require 'capybara'
+  require 'capybara/rspec'
+  require 'rspec'
+  require 'features/web_helpers'
 
-# tell capybara about our app class
-Capybara.app = Battle
+  # tell capybara about our app class
+  Capybara.app = Battle
 end
