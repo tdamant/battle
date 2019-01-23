@@ -21,8 +21,10 @@ get '/play' do
 end
 
 get '/attack' do
+  $player1.attack($player2)
   @player_1_name = $player1.name
   @player_2_name = $player2.name
+  @player_2_hp = $player2.hp
   erb :attack
 end
   # start the server if ruby file executed directly
