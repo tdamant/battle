@@ -14,4 +14,5 @@ class Player
     @hp -= DEFAULT_ATTACK
   end
 
+
 end
