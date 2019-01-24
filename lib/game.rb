@@ -1,6 +1,6 @@
 class Game
   attr_reader :player1, :player2, :turn, :not_turn
-# not turn not tested & attack ha smore responsabilities
+# not turn not tested & attack has smore responsabilities
 
 def initialize(player1, player2)
   @player1 = player1
@@ -11,7 +11,6 @@ end
 
 def attack(player)
   player.receive_damage
-  switch_turn
 end
 
 def switch_turn
