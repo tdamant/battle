@@ -1,7 +1,6 @@
 class Player
 
   DEFAULT_HP = 60
-  DEFAULT_ATTACK = 10 # move to game
 
   attr_reader :name, :hp
 
@@ -10,8 +9,8 @@ class Player
     @hp = DEFAULT_HP
   end
 
-  def receive_damage
-    @hp -= DEFAULT_ATTACK
+  def receive_damage(amount)
+    @hp -= amount
   end
 
 

@@ -17,7 +17,7 @@ def initialize(player1, player2)
 end
 
 def attack(player)
-  player.receive_damage
+  player.receive_damage(rand(0..10))
 end
 
 def turn
@@ -33,11 +33,11 @@ def switch_turn
 end
 
 def game_over
-  @player1.hp == 0 || @player2.hp == 0
+  @player1.hp <= 0 || @player2.hp <= 0
 end
 
 def print_looser
-  @player1.hp == 0 ? "#{player1.name} lost!!" :  "#{player2.name} lost!!"
+  @player1.hp <= 0 ? "#{player1.name} lost!!" :  "#{player2.name} lost!!"
 end
 
 end

@@ -22,7 +22,8 @@ end
 
   describe '#attack' do
     it "tells a player to take damage" do
-      expect(player2).to receive :receive_damage
+      srand(15)
+      expect(player2).to receive(:receive_damage).with(8)
       game.attack(player2)
     end
   end
@@ -36,10 +37,16 @@ end
 
   describe '#game_over' do
     let(:player3) { double(:player, hp: 10) }
+    let(:player4) { double(:player, hp: -3) }
+    let(:game3) { Game.new(player3, player4)}
     let(:game2) { Game.new(player1, player3) }
 
-    it 'returns true when game is over' do
+    it 'returns true when a player has 0 hp' do
       expect(game.game_over).to eq true
+    end
+
+    it 'returns true when a player has less than 0 hp' do
+      expect(game3.game_over).to eq true
     end
 
     it 'returns false when game isn\'t over' do
@@ -54,7 +61,4 @@ end
       expect(game.print_looser).to eq 'player1 lost!!'
     end
   end
-
-  
-
 end

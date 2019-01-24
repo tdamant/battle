@@ -15,9 +15,9 @@ describe Player do
  end
 
  describe "#receive_damage" do
-   it "deducts #{Player::DEFAULT_ATTACK} HP" do
-     ross.receive_damage
-     expect(ross.hp).to eq (Player::DEFAULT_HP - Player::DEFAULT_ATTACK)
+   it "deducts specified amount of HP" do
+     ross.receive_damage(5)
+     expect(ross.hp).to eq (Player::DEFAULT_HP - 5)
    end
  end
 end
