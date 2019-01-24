@@ -23,4 +23,12 @@ def switch_turn
   end
 end
 
+def game_over
+  @player1.hp == 0 || @player2.hp == 0
+end
+
+def print_looser
+  @player1.hp == 0 ? "#{player1.name} lost!!" :  "#{player2.name} lost!!"
+end
+
 end

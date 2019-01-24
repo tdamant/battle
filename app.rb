@@ -23,8 +23,12 @@ end
 get '/attack' do
   @game = $game
   @game.attack(@game.not_turn)
-  @game.switch_turn
-  redirect '/play'
+  if @game.game_over
+    erb :lost
+  else
+    @game.switch_turn
+    redirect '/play'
+  end
 end
   # start the server if ruby file executed directly
   run! if app_file == $0
